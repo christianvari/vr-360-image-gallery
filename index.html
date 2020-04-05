@@ -57,18 +57,27 @@
 
             <a-sky id="image-360" radius="10" src="#city"></a-sky>
 
+            <!-- Line Layout -->
+
             <a-entity
-                template="src: #plane"
-                data-thumb="#city-thumb"
-            ></a-entity>
-            <a-entity
-                template="src: #plane"
-                data-thumb="#cubes-thumb"
-            ></a-entity>
-            <a-entity
-                template="src: #plane"
-                data-thumb="#sechelt-thumb"
-            ></a-entity>
+                id="links"
+                layout="type: line; margin: 1.5"
+                position="-3 -1 -4"
+            >
+                <!-- Template instances -->
+                <a-entity
+                    template="src: #plane"
+                    data-thumb="#city-thumb"
+                ></a-entity>
+                <a-entity
+                    template="src: #plane"
+                    data-thumb="#cubes-thumb"
+                ></a-entity>
+                <a-entity
+                    template="src: #plane"
+                    data-thumb="#sechelt-thumb"
+                ></a-entity>
+            </a-entity>
 
             <!-- Camera and cursor -->
 
