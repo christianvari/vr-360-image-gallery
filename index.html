@@ -55,6 +55,9 @@
                         geometry="primitive: plane; width: 1; height: 1"
                         material="shader: flat; src: ${thumb}"
                         sound="on: click; src: #click-sound"
+                        event-set__mouseenter="scale: 1.2 1.2 1.2"
+                        event-set__mouseleave="scale: 1 1 1"
+                        event-set__click="_target: #image-360; _delay: 200; material.src: ${src}"
                     ></a-entity>
                 </script>
             </a-assets>
@@ -74,14 +77,17 @@
                 <a-entity
                     template="src: #plane"
                     data-thumb="#city-thumb"
+                    data-src="#city"
                 ></a-entity>
                 <a-entity
                     template="src: #plane"
                     data-thumb="#cubes-thumb"
+                    data-src="#cubes"
                 ></a-entity>
                 <a-entity
                     template="src: #plane"
                     data-thumb="#sechelt-thumb"
+                    data-src="#sechelt"
                 ></a-entity>
             </a-entity>
 
