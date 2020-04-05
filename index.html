@@ -3,6 +3,10 @@
     <head>
         <title>VR 360 Image Gallery</title>
         <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
+        <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
+        <script src="https://unpkg.com/aframe-template-component@3.x.x/dist/aframe-template-component.min.js"></script>
+        <script src="https://unpkg.com/aframe-layout-component@4.x.x/dist/aframe-layout-component.min.js"></script>
+        <script src="https://unpkg.com/aframe-event-set-component@5.x.x/dist/aframe-event-set-component.min.js"></script>
     </head>
     <body>
         <a-scene>
@@ -37,6 +41,16 @@
                     id="sechelt-thumb"
                     src="https://cdn.aframe.io/360-image-gallery-boilerplate/img/thumb-sechelt.jpg"
                 />
+
+                <!-- Templating (with loaded template module) -->
+                <script id="plane" type="text/html">
+                        <a-entity
+                        class="link"
+                        geometry="primitive: plane; width: 1; height: 1"
+                        material="shader: flat; src: ${thumb}"
+                        sound="on: click; src: #click-sound"
+                    ></a-entity>
+                </script>
             </a-assets>
 
             <!-- Entities -->
@@ -44,10 +58,16 @@
             <a-sky id="image-360" radius="10" src="#city"></a-sky>
 
             <a-entity
-                class="link"
-                geometry="primitive: plane; width: 1; height: 1"
-                material="shader: flat; src: #cubes-thumb"
-                sound="on: click; src: #click-sound"
+                template="src: #plane"
+                data-thumb="#city-thumb"
+            ></a-entity>
+            <a-entity
+                template="src: #plane"
+                data-thumb="#cubes-thumb"
+            ></a-entity>
+            <a-entity
+                template="src: #plane"
+                data-thumb="#sechelt-thumb"
             ></a-entity>
 
             <!-- Camera and cursor -->
