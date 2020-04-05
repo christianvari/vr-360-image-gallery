@@ -43,7 +43,12 @@
 
             <a-sky id="image-360" radius="10" src="#city"></a-sky>
 
-            <a-entity class="link"></a-entity>
+            <a-entity
+                class="link"
+                geometry="primitive: plane; width: 1; height: 1"
+                material="shader: flat; src: #cubes-thumb"
+                sound="on: click; src: #click-sound"
+            ></a-entity>
 
             <!-- Camera and cursor -->
 
